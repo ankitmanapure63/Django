@@ -1,0 +1,41 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Login</title>
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+</head>
+<body>
+    <div class="container">
+        <div class="background">
+            <img src="{% static 'background-image.jpg' %}" alt="Background">
+        </div>
+        <div class="login-box">
+            <h2>Login</h2>
+            <form method="post" action="{% url 'login' %}">
+                {% csrf_token %}
+                <div class="input-group">
+                    <label for="email">Email</label>
+                    <input type="text" id="email" name="email_or_mobile" placeholder="Enter your email or mobile" required>
+                    <span class="icon">@</span>
+                </div>
+                <div class="input-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" placeholder="Enter your password" required>
+                    <span class="icon">🔒</span>
+                </div>
+                <div class="actions">
+                    <label>
+                        <input type="checkbox" name="remember_me"> Remember Me
+                    </label>
+                    <a href="{% url 'password_reset' %}">Forgot Password?</a>
+                </div>
+                <button type="submit" class="btn">Log in</button>
+            </form>
+            <p class="register-link">Don't have an account? <a href="{% url 'register' %}">Register</a></p>
+        </div>
+    </div>
+</body>
+</html>
