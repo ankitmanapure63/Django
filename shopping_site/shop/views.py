@@ -42,3 +42,4 @@ def create_hospital_record(request):
 #     return HttpResponse("Please submit the form with all required fields.")
 
 
+print("Hello world")
