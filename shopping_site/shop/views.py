@@ -11,17 +11,17 @@ from .models import Hospital
 
 # static data
 
-# def create_hospital_record(request):
-#     # Create a new hospital record
-#     new_record = Hospital.objects.create(
-#         fname="John",
-#         lname="Doe",
-#         age=30,
-#         salary=50000.00
-#     )
-#     return HttpResponse(f"Created Hospital Record: {new_record.fname} {new_record.lname}, Age: {new_record.age}, Salary: {new_record.salary}")
+def create_hospital_record(request):
+    # Create a new hospital record
+    new_record = Hospital.objects.create(
+        fname="John",
+        lname="Doe",
+        age=30,
+        salary=50000.00
+    )
+    return HttpResponse(f"Created Hospital Record: {new_record.fname} {new_record.lname}, Age: {new_record.age}, Salary: {new_record.salary}")
 
-# create dynamic data
+create dynamic data
 
 
 
